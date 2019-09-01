@@ -4,9 +4,12 @@
 import React, { FC } from "react"
 import styled from "styled-components"
 
-const Top: FC = props => (
-  <StyledText>hoge!</StyledText>
-)
+const Top: FC = props => {
+  console.log(props)
+  return (
+    <StyledText>hoge!</StyledText>
+  )
+}
 
 const StyledText = styled.div`
   color: red;

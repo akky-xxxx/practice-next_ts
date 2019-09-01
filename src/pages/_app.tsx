@@ -4,8 +4,17 @@
 import React, { Fragment } from "react"
 import App, { AppContext } from "next/app"
 import Head from "next/head"
+import { Provider } from "react-redux"
+import withRedux from "next-redux-wrapper"
 
-export default class extends App {
+/**
+ * store
+ */
+import { initStore } from "../redux/store"
+
+const store = initStore()
+
+class TopPage extends App {
   static async getInitialProps(props: AppContext) {
     const { Component, ctx } = props
     let pageProps = {}
@@ -27,8 +36,12 @@ export default class extends App {
         <Head>
           <title>テスト</title>
         </Head>
-        <Component {...pageProps} />
+        <Provider store={store}>
+          <Component {...pageProps} />
+        </Provider>
       </Fragment>
     )
   }
 }
+
+export default TopPage
