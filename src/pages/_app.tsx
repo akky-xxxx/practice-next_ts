@@ -3,6 +3,7 @@
  */
 import React, { Fragment } from "react"
 import App, { AppContext } from "next/app"
+import Head from "next/head"
 
 export default class extends App {
   static async getInitialProps(props: AppContext) {
@@ -23,6 +24,9 @@ export default class extends App {
 
     return (
       <Fragment>
+        <Head>
+          <title>テスト</title>
+        </Head>
         <Component {...pageProps} />
       </Fragment>
     )

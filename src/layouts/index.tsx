@@ -3,9 +3,7 @@ import { Head, Main, NextScript } from "next/document"
 
 const Layout = () => (
   <html>
-  <Head>
-    <title>テスト</title>
-  </Head>
+  <Head />
   <body>
   <Main />
   <NextScript />
