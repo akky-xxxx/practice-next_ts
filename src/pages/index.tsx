@@ -42,7 +42,11 @@ class TopPage extends Component<TopPageProps> {
         <Head>
           <title>{this.props.title}</title>
         </Head>
-        <TopComponent />
+        <TopComponent
+          count={count}
+          handleIncrement={handleIncrement}
+          handleDecrement={handleDecrement}
+        />
       </Fragment>
     )
   }
